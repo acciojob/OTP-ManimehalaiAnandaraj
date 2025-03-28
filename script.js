@@ -1,45 +1,35 @@
+document.body.innerHTML = `
+  <h1 id="verification_heading">Verify Your Account</h1>
+  <p id="verification_subtext">Please enter the 6-digit code sent to your device.</p>
+  <div class="code-container">
+    <input type="text" class="code" maxlength="1">
+    <input type="text" class="code" maxlength="1">
+    <input type="text" class="code" maxlength="1">
+    <input type="text" class="code" maxlength="1">
+    <input type="text" class="code" maxlength="1">
+    <input type="text" class="code" maxlength="1">
+  </div><br><br>
+  <p id="submit">This is design only.we didn't actually send you an email
+  as we don't have your email,right</p>
+`;
 
-const heading = document.createElement('h1');
-heading.textContent = "Verify Your Account";
-heading.id = "verification-heading";
-document.body.appendChild(heading);
+// JavaScript logic
+const codeInputs = document.querySelectorAll('.code');
 
-const subHeading = document.createElement('p');
-subHeading.textContent = "Please enter the 6-digit code sent to your device.";
-subHeading.id = "verification-subtext";
-document.body.appendChild(subHeading);
+codeInputs.forEach((input, index) => {
+  input.addEventListener('input', () => {
+    if (input.value) {
+      if (index < codeInputs.length - 1) {
+        codeInputs[index + 1].focus();
+      }
+    }
+  });
 
-// OTP Input Fields
-const otpContainer = document.createElement('div');
-otpContainer.classList.add('otp-container');
-document.body.appendChild(otpContainer);
-
-const inputFields = [];
-
-for (let i = 0; i < 6; i++) {
-    const inputField = document.createElement('input');
-    inputField.type = 'text';
-    inputField.maxLength = 1;
-    inputField.classList.add('code');
-    otpContainer.appendChild(inputField);
-    inputFields.push(inputField);
-
-    inputField.addEventListener('input', function() {
-        if (this.value) {
-            if (i < 5) {
-                inputFields[i + 1].focus();
-            }
-        }
-    });
-
-    inputField.addEventListener('keydown', function(event) {
-        if (event.key === 'Backspace') {
-            if (!this.value && i > 0) {
-                inputFields[i - 1].focus();
-            }
-        }
-    });
-}
-
-inputFields[0].focus();
-
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Backspace') {
+      if (!input.value && index > 0) {
+        codeInputs[index - 1].focus();
+      }
+    }
+  });
+});
