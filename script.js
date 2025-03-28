@@ -13,7 +13,7 @@ document.body.innerHTML = `
   <button id="submit">Submit</button>
 `;
 
-// JavaScript logic
+
 const codeInputs = document.querySelectorAll('.code');
 
 codeInputs.forEach((input, index) => {
