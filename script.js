@@ -33,4 +33,3 @@ codeInputs.forEach((input, index) => {
     }
   });
 });
-cy.wait()
