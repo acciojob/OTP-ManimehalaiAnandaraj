@@ -1,3 +1,5 @@
+
+cy.wait()
 document.body.innerHTML = `
   <h1 id="verification_heading">Verify Your Account</h1>
   <p id="verification_subtext">Please enter the 6-digit code sent to your device.</p>
@@ -13,7 +15,6 @@ document.body.innerHTML = `
   as we don't have your email,right</p>
 `;
 
-// JavaScript logic
 const codeInputs = document.querySelectorAll('.code');
 
 codeInputs.forEach((input, index) => {
@@ -24,7 +25,6 @@ codeInputs.forEach((input, index) => {
       }
     }
   });
-
   input.addEventListener('keydown', (event) => {
     if (event.key === 'Backspace') {
       if (!input.value && index > 0) {
