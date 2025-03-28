@@ -1,7 +1,5 @@
 
-const firstInput = document.getElementById('code-1');
-firstInput.addEventListener('input', () => 
-	{
+
 document.body.innerHTML = `
   <h1 id="verification_heading">Verify Your Account</h1>
   <p id="verification_subtext">Please enter the 6-digit code sent to your device.</p>
@@ -35,4 +33,4 @@ codeInputs.forEach((input, index) => {
     }
   });
 });
-	});
+	
