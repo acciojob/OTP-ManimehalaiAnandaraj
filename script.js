@@ -1,11 +1,8 @@
 
-
-
 const codeInputs = document.querySelectorAll('.code');
 
 codeInputs.forEach((input, index) => {
-	 input.addEventListener('click', () => {
-    input.focus();
+
   input.addEventListener('input', () => {
     if (input.value) {
       if (index < codeInputs.length - 1) {
@@ -21,4 +18,4 @@ codeInputs.forEach((input, index) => {
     }
   });
 });
-});	
+
