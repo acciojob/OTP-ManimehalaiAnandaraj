@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Handle backspace
-    input.addEventListener('keydown', function(e) {
+    input.addEventListener('keyup', function(e) {
       if (e.key === 'Backspace' && this.value.length === 0) {
         if (index > 0) {
           inputs[index - 1].focus();
