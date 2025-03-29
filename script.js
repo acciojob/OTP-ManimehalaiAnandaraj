@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const codeContainer = document.querySelector('.code-container');
   const inputs = document.querySelectorAll('.code');
-	
+	document.getElementById('code-1').focus();
   inputs.forEach((input, index) => {
     input.addEventListener('input', function(e) {
       if (this.value.length === 1) {
