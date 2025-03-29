@@ -1,8 +1,8 @@
 const codeInputs = document.querySelectorAll('.code');
 
 codeInputs.forEach((input, index) => {
-  input.addEventListener('input', () => {
-    if (index < codeInputs.length - 1) {
+  input.addEventListener('keyup', () => {
+    if (input.value && index < codeInputs.length - 1) {
       codeInputs[index + 1].focus();
     }
   });
