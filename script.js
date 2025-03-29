@@ -11,11 +11,15 @@ codeInputs.forEach((input, index) => {
     }
   });
   input.addEventListener('keyup', (event) => {
+	 
     if (event.key === 'Backspace') {
       if (!input.value && index > 0) {
         codeInputs[index - 1].focus();
       }
     }
+  });
+	 input.addEventListener('click', () => {
+    input.focus();
   });
 });
 
