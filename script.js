@@ -6,7 +6,8 @@ codeInputs.forEach((input, index) => {
   input.addEventListener('keydown', (event) => {
     if (/\d/.test(event.key)) {
       if (index < codeInputs.length - 1) {
-        codeInputs[index + 1].focus();
+setTimeout(() => codeInputs[index + 1].focus(), 10);
+
       }
     }
   });
