@@ -1,25 +1,23 @@
-const codeInputs = document.querySelectorAll(‘.code’);
-
-codeInputs.forEach((input, index) => {
-
-input.addEventListener(‘keydown’, (event) => {
-if (/\d/.test(event.key)) {
-if (index < codeInputs.length - 1) {
-setTimeout(() => codeInputs[index + 1].focus(), 10);
-
-  }
-}
+document.addEventListener('DOMContentLoaded', function() {
+  const codeContainer = document.querySelector('.code-container');
+  const inputs = document.querySelectorAll('.code');
+	
+  inputs.forEach((input, index) => {
+    input.addEventListener('input', function(e) {
+      if (this.value.length === 1) {
+        if (index < inputs.length - 1) {
+          inputs[index + 1].focus();
+        }
+      }
+    });
+    
+    // Handle backspace
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Backspace' && this.value.length === 0) {
+        if (index > 0) {
+          inputs[index - 1].focus();
+        }
+      }
+    });
+  });
 });
-input.addEventListener(‘keyup’, (event) => {
-
-if (event.key === 'Backspace') {
-  if (!input.value && index > 0) {
-    codeInputs[index - 1].focus();
-  }
-}
-});
-input.addEventListener(‘click’, () => {
-input.focus();
-});
-});
-

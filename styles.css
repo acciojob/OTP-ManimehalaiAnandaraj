@@ -1,1 +1,21 @@
 /*  your css code here. If applicable */
+.code-container{
+	display:flex;
+	gap:10px;
+	justify-content:center;
+}
+.code{
+	width:40px;
+	height:40px;
+	text-align:center;
+	font-size:20px;
+	border-radius:70px;
+}
+#submit{
+	background-color:lightblue;
+	
+	width:400px;
+	text-align:center;
+}
+
+
